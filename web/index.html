@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Raumffisch[DochCanvas]</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <div id="message"></div>
+    <div id="intro_overlay">
+
+      <div id='welcome'>
+        <span id="start">Start</span>
+      </div>
+    </div>
+    <canvas id="stage" width="640" height="640"></canvas>
+  
+    <div>
+      <div id="ffischlifes"></div>
+      <div id="scorebox">
+        <span id="score"></span>
+      </div>
+    </div>
+    <div style="width: 640px; height: 16px; padding: 0px 0px 0px 0px; border: 3px solid; border-radius: 5px; text-align: left; overflow: hidden;">
+
+      <div  style="width: 320px;" id="distance"></div>
+
+    </div>
+
+
+
+  </div>
+  <script type='application/dart' src='ffischclient.dart'></script>
+  <script src='packages/browser/dart.js'></script>
+</body>
+</html>

@@ -1,0 +1,838 @@
+* {
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  font-size: 20px;
+  margin: 0px;
+  padding: 0px;
+  color: rgba(255, 255, 255, 0.66);
+}
+
+.container {
+  display:inline-block;
+  margin: 0px auto 0px auto;
+  text-align: center;
+  padding: 0px 0px 0px 0px;
+}
+
+#intro_overlay{
+  position:fixed;
+
+  margin-left:-320px;
+
+  left:50%;
+  width:640px;
+  height:640px;
+  background-image:url(img/loading.png);
+  opacity:1.0;
+  border:1px solid #FFFFFF;
+  margin-top:4px;
+  background-size:100%
+}
+
+#distance{
+  box-sizing: border-box;
+  height:1em; width:100%;
+  background-color:blue;
+  display: inline-block;
+  margin:0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  border:0px;
+}
+
+
+
+
+a { 
+  text-decoration: none; 
+  font-style: italic; 
+  color: white; 
+  font-weight: normal;
+}
+
+/* Game controls */
+
+#welcome, #message, #controls {
+  margin: 50px 0px 50px 0px;
+  margin-top:580px;
+}
+
+#gameover:empty { visibility: hidden; }
+#message:empty { visibility: hidden; }
+
+
+
+#message{
+  
+  background: rgba(255, 255, 255, 0.5);
+  width: 646px;
+  box-sizing: border-box;
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+  margin:auto;
+  top:160px;
+  position:fixed;
+  padding:6px;
+
+}
+
+
+#controls #level:empty { visibility: hidden; }
+#controls #points:empty { visibility: hidden; }
+
+#welcome #start, #controls #points, #controls #level {
+  padding: 5px 20px 5px 20px;
+  font-style: normal;
+  font-size: 2rem;
+  text-decoration: none;
+  color: white;
+  background: rgba(255, 255, 255, 0.5);
+  border: 3px solid white;
+  border-radius: 5px;
+}
+
+/* Spielbrett */
+body {
+  height:100%;
+  background-color:#222222;
+  //background-image: url('img/space.jpg');
+  background-position: top left;
+  margin: 0px;
+  padding: 0px;
+  text-align:center;
+  overflow:hidden;
+}
+
+#snakegame {
+  margin: 5px auto 5px auto;
+}
+
+table{
+  border-collapse:collapse;
+  background: rgba(0, 0, 0, 0.4);
+  background-image:url('img/starfield2.png');
+  border:1px solid white;
+  
+}
+
+#scrollbg{
+  border-collapse:collapse;
+  background-image:url('img/starfield.png');
+  background-position-x:55px;
+  border:0px solid green;
+  margin:auto;
+  padding:auto;
+  max-width:640px;
+  max-height:640px;
+
+  
+}
+
+#main_background{
+  border-collapse:collapse;
+  background-image:url('img/space.jpg');
+  background-position-x:0px;
+  border:0px solid green;
+  margin:auto;
+  padding:auto;
+  max-width:640px;
+  max-height:640px;
+
+  
+}
+
+#snakegame table{
+  
+  border-collapse:collapse;
+  border:1px solid white;
+  margin:0px;
+  padding:0px;
+  background-image:url('img/starfield2.png');
+  background-position-x:0px;
+  
+
+}
+#snakegame td {
+  
+  margin:0px;
+  padding:0px;
+  width: 8px;
+  height: 8px;
+  clear:both;
+  //background: rgba(255, 255, 255, 0.1);
+}
+#scorebox{
+
+  
+}
+
+
+
+#ffischlifes{
+
+  width:320px;
+  height:48px;
+  background-image: url('img/neuffisch/raumffisch_sprite.png');
+  background-repeat:repeat;
+
+  
+
+}
+
+
+.ffisch00 {
+  background-image: url('img/ffisch/fisch00.png');
+
+}
+
+.ffisch01 {
+  background-image: url('img/ffisch/fisch01.png');
+
+}
+
+.ffisch02 {
+  background-image: url('img/ffisch/fisch02.png');
+
+}
+
+.ffisch10 {
+  background-image: url('img/ffisch/fisch10.png');
+
+}
+
+.ffisch11 {
+  background-image: url('img/ffisch/fisch11.png');
+
+}
+.ffisch12 {
+  background-image: url('img/ffisch/fisch12.png');
+
+}
+
+.ffisch20{
+  background-image: url('img/ffisch/fisch20.png');
+
+}
+.ffisch21{
+  background-image: url('img/ffisch/fisch21.png');
+
+}
+
+.ffisch22 {
+  background-image: url('img/ffisch/fisch22.png');
+
+}
+
+.ffisch30{
+  background-image: url('img/ffisch/fisch30.png');
+
+}
+.ffisch31{
+  background-image: url('img/ffisch/fisch31.png');
+
+}
+
+.ffisch32 {
+  background-image: url('img/ffisch/fisch32.png');
+
+}
+
+
+.neuffisch00 {
+  background-image: url('img/neuffisch/raumffisch_sprite.png');
+  background-position: 0px 0px ;
+}
+.neuffisch10 {
+  background-image: url('img/neuffisch/raumffisch_sprite.png');
+  background-position: -8px 0px;
+}
+.neuffisch20 {
+  background-image: url('img/neuffisch/raumffisch_sprite.png');
+  background-position: -16px 0px;
+}
+.neuffisch30 {
+  background-image: url('img/neuffisch/raumffisch_sprite.png');
+  background-position: -24px 0px;
+}
+.neuffisch40 {
+  background-image: url('img/neuffisch/raumffisch_sprite.png');
+  background-position: -32px 0px;
+}
+.neuffisch50 {
+  background-image: url('img/neuffisch/raumffisch_sprite.png');
+  background-position: -40px 0px;
+}
+.neuffisch60 {
+  background-image: url('img/neuffisch/raumffisch_sprite.png');
+  background-position: -48px 0px;
+}
+.neuffisch70 {
+  background-image: url('img/neuffisch/raumffisch_sprite.png');
+  background-position: -56px 0px;
+}
+.neuffisch01 {
+  background-image: url('img/neuffisch/raumffisch_sprite.png');
+  background-position: 0px -8px;
+}
+.neuffisch11 {
+  background-image: url('img/neuffisch/raumffisch_sprite.png');
+  background-position: -8px -8px;
+}
+.neuffisch21 {
+  background-image: url('img/neuffisch/raumffisch_sprite.png');
+  background-position: -16px -8px;
+}
+.neuffisch31 {
+  background-image: url('img/neuffisch/raumffisch_sprite.png');
+  background-position: -24px -8px;
+}
+.neuffisch41 {
+  background-image: url('img/neuffisch/raumffisch_sprite.png');
+  background-position: -32px -8px;
+}
+.neuffisch51 {
+  background-image: url('img/neuffisch/raumffisch_sprite.png');
+  background-position: -40px -8px;
+}
+.neuffisch61 {
+  background-image: url('img/neuffisch/raumffisch_sprite.png');
+  background-position: -48px -8px;
+}
+.neuffisch71 {
+  background-image: url('img/neuffisch/raumffisch_sprite.png');
+  background-position: -56px -8px;
+}
+.neuffisch02 {
+  background-image: url('img/neuffisch/raumffisch_sprite.png');
+  background-position: 0px -16px;
+}
+.neuffisch12 {
+  background-image: url('img/neuffisch/raumffisch_sprite.png');
+  background-position: -8px -16px;
+}
+.neuffisch22 {
+  background-image: url('img/neuffisch/raumffisch_sprite.png');
+  background-position: -16px -16px;
+}
+.neuffisch32 {
+  background-image: url('img/neuffisch/raumffisch_sprite.png');
+  background-position: -24px -16px;
+}
+.neuffisch42 {
+  background-image: url('img/neuffisch/raumffisch_sprite.png');
+  background-position: -32px -16px;
+}
+.neuffisch52 {
+  background-image: url('img/neuffisch/raumffisch_sprite.png');
+  background-position: -40px -16px;
+}
+.neuffisch62 {
+  background-image: url('img/neuffisch/raumffisch_sprite.png');
+  background-position: -48px -16px;
+}
+.neuffisch72 {
+  background-image: url('img/neuffisch/raumffisch_sprite.png');
+  background-position: -56px -16px;
+}
+.neuffisch03 {
+  background-image: url('img/neuffisch/raumffisch_sprite.png');
+  background-position:  0px -24px;
+}
+.neuffisch13 {
+  background-image: url('img/neuffisch/raumffisch_sprite.png');
+  background-position: -8px -24px;
+}
+.neuffisch23 {
+  background-image: url('img/neuffisch/raumffisch_sprite.png');
+  background-position: -16px -24px;
+}
+.neuffisch33 {
+  background-image: url('img/neuffisch/raumffisch_sprite.png');
+  background-position: -24px -24px;
+}
+.neuffisch43 {
+  background-image: url('img/neuffisch/raumffisch_sprite.png');
+  background-position: -32px -24px;
+}
+.neuffisch53 {
+  background-image: url('img/neuffisch/raumffisch_sprite.png');
+  background-position: -40px -24px;
+}
+.neuffisch63 {
+  background-image: url('img/neuffisch/raumffisch_sprite.png');
+  background-position: -48px -24px;
+}
+.neuffisch73 {
+  background-image: url('img/neuffisch/raumffisch_sprite.png');
+  background-position: -56px -24px;
+}
+.neuffisch04 {
+  background-image: url('img/neuffisch/raumffisch_sprite.png');
+  background-position:0px -32px;
+}
+.neuffisch14 {
+  background-image: url('img/neuffisch/raumffisch_sprite.png');
+  background-position:-8px -32px ;
+}
+.neuffisch24 {
+  background-image: url('img/neuffisch/raumffisch_sprite.png');
+  background-position:-16px -32px ;
+}
+.neuffisch34 {
+  background-image: url('img/neuffisch/raumffisch_sprite.png');
+  background-position:-24px -32px ;
+}
+.neuffisch44 {
+  background-image: url('img/neuffisch/raumffisch_sprite.png');
+  background-position:-32px -32px ;
+}
+.neuffisch54 {
+  background-image: url('img/neuffisch/raumffisch_sprite.png');
+  background-position:-40px -32px ;
+}
+.neuffisch64 {
+  background-image: url('img/neuffisch/raumffisch_sprite.png');
+  background-position:-48px -32px ;
+}
+.neuffisch74 {
+  background-image: url('img/neuffisch/raumffisch_sprite.png');
+  background-position:-56px -32px ;
+}
+.neuffisch05 {
+  background-image: url('img/neuffisch/raumffisch_sprite.png');
+  background-position:0px -40px ;
+}
+.neuffisch15 {
+  background-image: url('img/neuffisch/raumffisch_sprite.png');
+  background-position:-8px -40px ;
+}
+.neuffisch25 {
+  background-image: url('img/neuffisch/raumffisch_sprite.png');
+  background-position:-16px -40px ;
+}
+.neuffisch35 {
+  background-image: url('img/neuffisch/raumffisch_sprite.png');
+  background-position:-24px -40px ;
+}
+.neuffisch45 {
+  background-image: url('img/neuffisch/raumffisch_sprite.png');
+  background-position:-32px -40px ;
+}
+.neuffisch55 {
+  background-image: url('img/neuffisch/raumffisch_sprite.png');
+  background-position:-40px -40px ;
+}
+.neuffisch65 {
+  background-image: url('img/neuffisch/raumffisch_sprite.png');
+  background-position:-48px -40px ;
+}
+.neuffisch75 {
+  background-image: url('img/neuffisch/raumffisch_sprite.png');
+  background-position:-56px -40px ;
+}
+
+.protectling {
+  background-color: green !important;
+  
+}
+
+.protectling00 {
+  background-color: green !important;
+  
+}
+
+.protectling01 {
+  background-color: green !important;
+  
+}
+
+.projectile00 {
+  background-image: url('img/bullet.gif');
+  //background-color: blue !important;
+
+  
+  background-position: left top;
+}
+
+.bigprojectile00 {
+  background-image: url('img/bigbullet.gif');
+  //background-color: blue !important;
+
+  
+  background-position: 0px 0px;
+}
+
+.bigprojectile01 {
+  background-image: url('img/bigbullet.gif');
+  //background-color: blue !important;
+
+  
+  background-position: 0px 8px;
+}
+
+.bigprojectile10 {
+  background-image: url('img/bigbullet.gif');
+  //background-color: blue !important;
+
+  
+  background-position: 8px 0px;
+}
+
+.bigprojectile11 {
+  background-image: url('img/bigbullet.gif');
+  //background-color: blue !important;
+
+  
+  background-position: 8px 8px;
+}
+
+
+
+.anotherbigprojectile00 {
+  background-image: url('img/bigbullet_offset2.gif');
+  //background-color: blue !important;
+
+  
+  background-position: 0px 0px;
+}
+
+.anotherbigprojectile01 {
+  background-image: url('img/bigbullet_offset2.gif');
+  //background-color: blue !important;
+
+  
+  background-position: 0px 8px;
+}
+
+.anotherbigprojectile10 {
+  background-image: url('img/bigbullet_offset2.gif');
+  //background-color: blue !important;
+
+  
+  background-position: 8px 0px;
+}
+
+.anotherbigprojectile11 {
+  background-image: url('img/bigbullet_offset2.gif');
+  //background-color: blue !important;
+
+  
+  background-position: 8px 8px;
+}
+
+
+.enemykraken00{
+  background-image:url(img/kraken.gif);
+  background-position: -0px -0px;
+}
+.enemykraken10{
+  background-image:url(img/kraken.gif);
+  background-position: -8px -0px;
+}
+.enemykraken20{
+  background-image:url(img/kraken.gif);
+  background-position: -16px -0px;
+}
+.enemykraken30{
+  background-image:url(img/kraken.gif);
+  background-position: -24px -0px;
+}
+.enemykraken40{
+  background-image:url(img/kraken.gif);
+  background-position: -32px -0px;
+}
+.enemykraken50{
+  background-image:url(img/kraken.gif);
+  background-position: -40px -0px;
+}
+.enemykraken60{
+  background-image:url(img/kraken.gif);
+  background-position: -48px -0px;
+}
+.enemykraken70{
+  background-image:url(img/kraken.gif);
+  background-position: -56px -0px;
+}
+.enemykraken01{
+  background-image:url(img/kraken.gif);
+  background-position: -0px -8px;
+}
+.enemykraken11{
+  background-image:url(img/kraken.gif);
+  background-position: -8px -8px;
+}
+.enemykraken21{
+  background-image:url(img/kraken.gif);
+  background-position: -16px -8px;
+}
+.enemykraken31{
+  background-image:url(img/kraken.gif);
+  background-position: -24px -8px;
+}
+.enemykraken41{
+  background-image:url(img/kraken.gif);
+  background-position: -32px -8px;
+}
+.enemykraken51{
+  background-image:url(img/kraken.gif);
+  background-position: -40px -8px;
+}
+.enemykraken61{
+  background-image:url(img/kraken.gif);
+  background-position: -48px -8px;
+}
+.enemykraken71{
+  background-image:url(img/kraken.gif);
+  background-position: -56px -8px;
+}
+.enemykraken02{
+  background-image:url(img/kraken.gif);
+  background-position: -0px -16px;
+}
+.enemykraken12{
+  background-image:url(img/kraken.gif);
+  background-position: -8px -16px;
+}
+.enemykraken22{
+  background-image:url(img/kraken.gif);
+  background-position: -16px -16px;
+}
+.enemykraken32{
+  background-image:url(img/kraken.gif);
+  background-position: -24px -16px;
+}
+.enemykraken42{
+  background-image:url(img/kraken.gif);
+  background-position: -32px -16px;
+}
+.enemykraken52{
+  background-image:url(img/kraken.gif);
+  background-position: -40px -16px;
+}
+.enemykraken62{
+  background-image:url(img/kraken.gif);
+  background-position: -48px -16px;
+}
+.enemykraken72{
+  background-image:url(img/kraken.gif);
+  background-position: -56px -16px;
+}
+.enemykraken03{
+  background-image:url(img/kraken.gif);
+  background-position: -0px -24px;
+}
+.enemykraken13{
+  background-image:url(img/kraken.gif);
+  background-position: -8px -24px;
+}
+.enemykraken23{
+  background-image:url(img/kraken.gif);
+  background-position: -16px -24px;
+}
+.enemykraken33{
+  background-image:url(img/kraken.gif);
+  background-position: -24px -24px;
+}
+.enemykraken43{
+  background-image:url(img/kraken.gif);
+  background-position: -32px -24px;
+}
+.enemykraken53{
+  background-image:url(img/kraken.gif);
+  background-position: -40px -24px;
+}
+.enemykraken63{
+  background-image:url(img/kraken.gif);
+  background-position: -48px -24px;
+}
+.enemykraken73{
+  background-image:url(img/kraken.gif);
+  background-position: -56px -24px;
+}
+
+
+.enemy00 {
+  background-image: url('img/enemy/enemy00.png');
+}
+
+.enemy01 {
+  background-image: url('img/enemy/enemy10.png');
+}
+
+.enemy02 {
+  background-image: url('img/enemy/enemy20.png');
+}
+
+.enemy10 {
+  background-image: url('img/enemy/enemy01.png');
+}
+
+.enemy11 {
+  background-image: url('img/enemy/enemy11.png');
+}
+
+.enemy12 {
+  background-image: url('img/enemy/enemy21.png');
+}
+
+.enemy20 {
+  background-image: url('img/enemy/enemy02.png');
+}
+
+.enemy21 {
+  background-image: url('img/enemy/enemy12.png');
+}
+
+.enemy22 {
+  background-image: url('img/enemy/enemy22.png');
+}
+
+
+.powerup_a_00{
+  background-image:url(img/powerup1.gif);
+  background-position: 0px 0px;
+}
+.powerup_a_10{
+  background-image:url(img/powerup1.gif);
+  background-position: -8px -0px;
+}
+.powerup_a_20{
+  background-image:url(img/powerup1.gif);
+  background-position: -16px -0px;
+}
+.powerup_a_01{
+  background-image:url(img/powerup1.gif);
+  background-position: -0px -8px;
+}
+.powerup_a_11{
+  background-image:url(img/powerup1.gif);
+  background-position: -8px -8px;
+}
+.powerup_a_21{
+  background-image:url(img/powerup1.gif);
+  background-position: -16px -8px;
+}
+.powerup_a_02{
+  background-image:url(img/powerup1.gif);
+  background-position: -0px -16px;
+}
+.powerup_a_12{
+  background-image:url(img/powerup1.gif);
+  background-position: -8px -16px;
+}
+.powerup_a_22{
+  background-image:url(img/powerup1.gif);
+  background-position: -16px -16px;
+}
+
+
+.powerupB00{
+  background-image:url(img/powerup2.gif);
+  background-position: 0px 0px;
+}
+.powerupB10{
+  background-image:url(img/powerup2.gif);
+  background-position: -8px -0px;
+}
+.powerupB20{
+  background-image:url(img/powerup2.gif);
+  background-position: -16px -0px;
+}
+.powerupB01{
+  background-image:url(img/powerup2.gif);
+  background-position: -0px -8px;
+}
+.powerupB11{
+  background-image:url(img/powerup2.gif);
+  background-position: -8px -8px;
+}
+.powerupB21{
+  background-image:url(img/powerup2.gif);
+  background-position: -16px -8px;
+}
+.powerupB02{
+  background-image:url(img/powerup2.gif);
+  background-position: -0px -16px;
+}
+.powerupB12{
+  background-image:url(img/powerup2.gif);
+  background-position: -8px -16px;
+}
+.powerupB22{
+  background-image:url(img/powerup2.gif);
+  background-position: -16px -16px;
+}
+
+
+.powerupC00{
+  background-image:url(img/powerup3.gif);
+  background-position: 0px 0px;
+}
+.powerupC10{
+  background-image:url(img/powerup3.gif);
+  background-position: -8px -0px;
+}
+.powerupC20{
+  background-image:url(img/powerup3.gif);
+  background-position: -16px -0px;
+}
+.powerupC01{
+  background-image:url(img/powerup3.gif);
+  background-position: -0px -8px;
+}
+.powerupC11{
+  background-image:url(img/powerup3.gif);
+  background-position: -8px -8px;
+}
+.powerupC21{
+  background-image:url(img/powerup3.gif);
+  background-position: -16px -8px;
+}
+.powerupC02{
+  background-image:url(img/powerup3.gif);
+  background-position: -0px -16px;
+}
+.powerupC12{
+  background-image:url(img/powerup3.gif);
+  background-position: -8px -16px;
+}
+.powerupC22{
+  background-image:url(img/powerup3.gif);
+  background-position: -16px -16px;
+}
+
+.powerupD00{
+  background-image:url(img/powerup4.gif);
+  background-position: 0px 0px;
+}
+.powerupD10{
+  background-image:url(img/powerup4.gif);
+  background-position: -8px -0px;
+}
+.powerupD20{
+  background-image:url(img/powerup4.gif);
+  background-position: -16px -0px;
+}
+.powerupD01{
+  background-image:url(img/powerup4.gif);
+  background-position: -0px -8px;
+}
+.powerupD11{
+  background-image:url(img/powerup4.gif);
+  background-position: -8px -8px;
+}
+.powerupD21{
+  background-image:url(img/powerup4.gif);
+  background-position: -16px -8px;
+}
+.powerupD02{
+  background-image:url(img/powerup4.gif);
+  background-position: -0px -16px;
+}
+.powerupD12{
+  background-image:url(img/powerup4.gif);
+  background-position: -8px -16px;
+}
+.powerupD22{
+  background-image:url(img/powerup4.gif);
+  background-position: -16px -16px;
+}
