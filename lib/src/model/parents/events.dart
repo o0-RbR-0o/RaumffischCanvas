@@ -12,6 +12,9 @@ class EventSystem{
   bool shot3fired=false;
   bool startmusic=false;
   bool derhatdochan=false;
+  bool gameover=false;
+  bool gamestart=true;
+  String poweruptype="";
   EventSystem();
   
   resetevents(){
@@ -24,5 +27,8 @@ class EventSystem{
     this.shot3fired=false;
     this.startmusic=false;
     this.derhatdochan=false;
+    this.gameover=false;
+    this.gamestart=false;
+    poweruptype="";
   }
 }

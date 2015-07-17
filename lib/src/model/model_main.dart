@@ -65,7 +65,7 @@ class RaumffischGame {
     
     _level = new Level.fromJSONurl("levels/level.json");
 
-    ffisch = new Ffisch(this,new OneShot(this, 16));
+    ffisch = new Ffisch(this,new WallShot(this, 16));
 
 
     _enemyGenerator = new EnemyGenerator(_level, this);
@@ -117,6 +117,7 @@ class RaumffischGame {
       _powerupGenerator.tick(period);
     }
     if(ffisch._lifes <=0){
+      this.eventSystem.gameover=true;
       this._gameOver = true;
       
     }

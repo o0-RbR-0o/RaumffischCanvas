@@ -20,6 +20,7 @@ class SineDoubleShotPowerup extends Powerup{
   void apply(Ffisch ffisch){
     ffisch._current_weapon = new SineDoubleShot(_game, 6);
     _game.eventSystem.powerupcollected=true;
+    _game.eventSystem.poweruptype="spiralshot";
   }
 }
 
@@ -33,6 +34,7 @@ class DoubleShotPowerup extends Powerup{
   void apply(Ffisch ffisch){
     ffisch._current_weapon = new DoubleShot(_game, 8);
     _game.eventSystem.powerupcollected=true;
+    _game.eventSystem.poweruptype="doubleshot";
   }
 }
 
@@ -46,6 +48,7 @@ class OneShotPowerup extends Powerup{
   void apply(Ffisch ffisch){
     ffisch._current_weapon = new OneShot(_game, 4);
     _game.eventSystem.powerupcollected=true;
+    _game.eventSystem.poweruptype="singleshot";
   }
 }
 
@@ -59,5 +62,6 @@ class DiagonalShotWithFrontPowerup extends Powerup{
   void apply(Ffisch ffisch){
     ffisch._current_weapon = new DiagonalShotWithFront(_game, 8);
     _game.eventSystem.powerupcollected=true;
+    _game.eventSystem.poweruptype="tripleshot";
   }
 }

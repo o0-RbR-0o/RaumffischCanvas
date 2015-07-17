@@ -45,6 +45,27 @@ class OneShot extends StandardWeapon implements Weapon{
   }
 }
 
+
+//Weapon shooting one small bullet right.
+class WallShot extends StandardWeapon implements Weapon{  
+WallShot(_game, _shot_frequency) : super(_game,_shot_frequency);
+
+List<Bullet> shoot(){
+  List<Bullet> bl=new List<Bullet>();
+  if(this._sfreq_counter==0){
+    for(var i=0;i<gamesize;i++){
+      Bullet p = new Projectile(_game,1,0); 
+      p.setposition(i%2+_game.ffisch._position_x+_game.ffisch._sizex-1,i);
+      bl.add(p);
+    }
+    _game.eventSystem.shotfired=true;
+  }
+  this._sfreq_counter=(this._sfreq_counter+1)%this._shot_frequency;
+  return bl;
+}
+}
+
+
 //Weapon shooting a sine moving double shot.
 class SineDoubleShot extends StandardWeapon implements Weapon{  
   SineDoubleShot(_game, _shot_frequency) : super(_game,_shot_frequency);
